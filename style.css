@@ -1,0 +1,58 @@
+nav a,
+nav button {
+    font-family: 'Dosis', sans-serif;
+    color: black;
+    text-decoration: none;
+    border: none;
+    background-color: inherit;
+    font-size: 35px;
+    padding: 0;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    margin: 0 0 20px 10px;
+}
+
+.dropdown-content a {
+    color: #535353;
+}
+
+.overlaycontent {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 50%;
+    display: none;
+    margin: 20px;
+    line-height: 1.4;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: aqua;
+    transition: 0.5s;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: -40px;
+    right: 15px;
+    font-size: 100px;
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+#menu {
+    font-size: 40px;
+}
