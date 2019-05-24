@@ -9,7 +9,7 @@ let exit = document.querySelector(".closebtn");
 menu.addEventListener("click", showOverlay);
 
 function showOverlay() {
-    overlay.style.width = "100%";
+    overlay.style.width = "80%";
     overlaycontent.style.display = "block";
     exit.style.display = "block";
 

@@ -17,6 +17,7 @@ nav button {
 
 .dropdown-content a {
     color: #535353;
+    margin-bottom: 5px;
 }
 
 .overlaycontent {
@@ -55,4 +56,29 @@ nav button {
 
 #menu {
     font-size: 40px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#bag {
+    background-image: url(materiale/svg/bag.svg);
+    width: 60px;
+    height: 60px;
+}
+
+#bag h3 {
+    text-align: center;
+    font-family: 'Assistant', sans-serif;
+    margin-top: 23px;
+}
+
+#logo {
+    background-image: url(materiale/svg/logo_full.svg);
+    width: 190px;
+    height: 80px;
+    margin-left: 20px;
 }
