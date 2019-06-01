@@ -231,3 +231,62 @@ button {
     background-size: cover;
     margin: 50px auto;
 }
+
+
+/** BETINGELSER **/
+#faq {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.faq {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 400px;
+    border: none;
+    text-align: left;
+    outline: none;
+    margin: 20px auto 10px;
+    font-size: 25px;
+
+}
+
+.active,
+.faq:hover {
+    background-color: rgba(232, 225, 210, 0.8);
+}
+
+.content {
+    width: 370px;
+    margin: 10px auto;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+    text-align: left;
+}
+
+.faq:after {
+    content: '\0002B';
+    font-size: 35px;
+    color: black;
+    float: right;
+    margin-top: -13px;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\02212";
+}
+
+#faq li {
+    list-style: none;
+    font-family: 'Roboto';
+}
+
+#faq ul {
+    padding: 0;
+    line-height: 1.5;
+}
