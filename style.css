@@ -10,7 +10,7 @@ h2 {
     font-family: 'Dosis';
     font-weight: 300;
     max-width: 400px;
-    margin: 20px auto;
+    margin: 50px auto 30px;
 }
 
 p {
@@ -51,6 +51,10 @@ nav a:first-child {
 .dropdown-content a {
     color: #535353;
     margin-bottom: 5px;
+}
+
+.dropdown-content a:first-child {
+    padding-top: 0px;
 }
 
 .overlaycontent {
@@ -289,4 +293,51 @@ button {
 #faq ul {
     padding: 0;
     line-height: 1.5;
+}
+
+
+/** GAVEKORT **/
+
+.amount {
+    display: flex;
+    flex-direction: row;
+    max-width: 297px;
+    margin: 0 auto;
+}
+
+input {
+    border: 2px black solid;
+    height: 10px;
+    width: 200px;
+    padding: 20px;
+    border-right: none;
+    text-align: right;
+}
+
+.dkk {
+    border-left: none;
+    margin-top: 0px;
+    border: 2px black solid;
+    height: 35px;
+    font-family: 'Roboto';
+    padding: 15px 10px 0;
+}
+
+#buy {
+    border: 2px solid black;
+    width: 293px;
+    height: 50px;
+    margin: 40px auto 0;
+}
+
+h3 {
+    margin: 15px;
+    text-align: center;
+    font-family: 'Roboto';
+    cursor: pointer;
+}
+
+#buy:hover {
+    background-color: black;
+    color: white;
 }
