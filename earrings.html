@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birgitte Bonnerup</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Assistant|Dosis:300|Poiret+One|Roboto:300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="60x60" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="76x76" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="120x120" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="144x144" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="152x152" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="icon" type="image/png" sizes="192x192" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="icon" type="image/png" sizes="96x96" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<div id="splash">
+    <header>
+
+        <nav>
+            <div id="menu">&#9776;</div>
+            <div class="overlay">
+                <a href="javascript:void(0)" class="closebtn">&times;</a>
+                <div class="overlaycontent">
+                    <div class="dropdown">
+                        <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="bracelets.html">ARMBÅND</a>
+                            <a href="necklace.html">HALSKÆDE</a>
+                            <a href="rings.html">RINGE</a>
+                            <a href="earrings.html">ØRERINGE</a>
+                        </div>
+                    </div>
+                    <a href="about.html">OM OS</a>
+                    <a href="gift.html">GAVEKORT</a>
+                    <a href="payment.html">BETINGELSER</a>
+                </div>
+            </div>
+        </nav>
+
+        <a href="index.html">
+            <div id="logo"></div>
+        </a>
+        <div id="bag">
+            <h3>0</h3>
+        </div>
+    </header>
+</div>
+
+<body>
+
+    <div class="filter">
+
+        <div class="materialsdrop">
+            <button class="materialsbtn">MATERIALE <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-materials">
+                <button class="materials">Guldbelagt</button>
+                <button class="materials">Sølv</button>
+
+            </div>
+        </div>
+
+        <div class="colorsdrop">
+            <button class="colorsbtn">FARVE <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-colors">
+                <button class="colors">Blå</button>
+                <button class="colors">Grøn</button>
+                <button class="colors">Hvid</button>
+                <button class="colors">Lyserød</button>
+                <button class="colors">Orange</button>
+                <button class="colors">Rød</button>
+
+            </div>
+        </div>
+
+        <div class="stonesdrop">
+            <button class="stonesbtn">STEN <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-stones">
+                <button class="stones">Chalcedon</button>
+                <button class="stones">Karneol</button>
+                <button class="stones">Perle</button>
+                <button class="stones">Rubin</button>
+                <button class="stones">Topaz</button>
+
+            </div>
+        </div>
+
+        <div class="pricesdrop">
+            <button class="pricesbtn">SORTER <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-prices">
+                <button class="prices">Lav til høj</button>
+                <button class="prices">Høj til lav</button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+<script src="script.js"></script>
+<script src="filter.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+        // Hent json fil fra Wordpress
+        async function getJson() {
+            let url = ("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/splashbillede/24");
+            let jsonData = await fetch(url);
+            billeder = await jsonData.json();
+            visBilleder();
+        }
+
+        function visBilleder() {
+
+            document.querySelector("#splash").style.backgroundImage = "url(" + billeder.billede.guid + ")";
+
+        }
+
+        getJson()
+    }
+</script></html>
