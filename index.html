@@ -36,6 +36,7 @@
             <div class="overlay">
                 <a href="javascript:void(0)" class="closebtn">&times;</a>
                 <div class="overlaycontent">
+                    <a href="index.html">FORSIDE</a>
                     <div class="dropdown">
                         <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
                         </button>
@@ -68,4 +69,26 @@
     </body>
 </div>
 
-<script src="script.js"></script></html>
+<script src="script.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+        // Hent json fil fra Wordpress
+        async function getJson() {
+            let url = ("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/splashbillede/28");
+            let jsonData = await fetch(url);
+            billeder = await jsonData.json();
+            visBilleder();
+        }
+
+        function visBilleder() {
+
+            document.querySelector("#index").style.backgroundImage = "url(" + billeder.billede.guid + ")";
+
+        }
+
+        getJson()
+    }
+</script></html>
