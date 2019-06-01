@@ -12,6 +12,7 @@ function showOverlay() {
     overlay.style.width = "80%";
     overlaycontent.style.display = "block";
     exit.style.display = "block";
+    menu.style.display = "none";
 
     exit.addEventListener("click", closeOverlay);
 
@@ -21,6 +22,7 @@ function closeOverlay() {
     overlay.style.width = "0%";
     overlaycontent.style.display = "none";
     exit.style.display = "none";
+    menu.style.display = "block";
 }
 
 dropbtn.addEventListener("click", dropDown);

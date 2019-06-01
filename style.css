@@ -1,3 +1,13 @@
+/** GENERELT **/
+
+html,
+body {
+    margin: 0 auto;
+}
+
+
+/** NAVIGATION **/
+
 nav a,
 nav button {
     font-family: 'Dosis', sans-serif;
@@ -8,6 +18,7 @@ nav button {
     font-size: 35px;
     padding: 0;
     display: block;
+    cursor: pointer;
 }
 
 .dropdown-content {
@@ -37,7 +48,7 @@ nav button {
     z-index: 1;
     left: 0;
     top: 0;
-    background-color: aqua;
+    background-color: rgba(232, 225, 210, 0.92);
     transition: 0.5s;
 }
 
@@ -56,6 +67,8 @@ nav button {
 
 #menu {
     font-size: 40px;
+    cursor: pointer;
+    margin: 2vw;
 }
 
 header {
@@ -81,4 +94,16 @@ header {
     width: 190px;
     height: 80px;
     margin-left: 20px;
+}
+
+
+
+/** FORSIDE **/
+
+#forside {
+    background-image: url(materiale/billeder/haand1_edit.jpg);
+    width: 56, 25vw;
+    height: 150vw;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
