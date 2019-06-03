@@ -30,43 +30,41 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-
-<header>
-
-    <nav>
-        <div id="menu">&#9776;</div>
-        <div class="overlay">
-            <a href="javascript:void(0)" class="closebtn">&times;</a>
-            <div class="overlaycontent">
-                <a href="index.html">FORSIDE</a>
-                <div class="dropdown">
-                    <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="bracelets.html">ARMBÅND</a>
-                        <a href="necklaces.html">HALSKÆDE</a>
-                        <a href="rings.html">RINGE</a>
-                        <a href="earrings.html">ØRERINGE</a>
-                    </div>
-                </div>
-                <a href="about.html">OM OS</a>
-                <a href="gift.html">GAVEKORT</a>
-                <a href="payment.html">BETINGELSER</a>
-            </div>
-        </div>
-    </nav>
-
-    <a href="index.html">
-        <div id="logo"></div>
-    </a>
-    <div id="bag">
-        <h3>0</h3>
-    </div>
-</header>
-
-
-
 <body>
+    <header>
+
+        <nav>
+            <div id="menu">&#9776;</div>
+            <div class="overlay">
+                <a href="javascript:void(0)" class="closebtn">&times;</a>
+                <div class="overlaycontent">
+                    <a href="index.html">FORSIDE</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="bracelets.html">ARMBÅND</a>
+                            <a href="necklaces.html">HALSKÆDE</a>
+                            <a href="rings.html">RINGE</a>
+                            <a href="earrings.html">ØRERINGE</a>
+                        </div>
+                    </div>
+                    <a href="about.html">OM OS</a>
+                    <a href="gift.html">GAVEKORT</a>
+                    <a href="payment.html">BETINGELSER</a>
+                </div>
+            </div>
+        </nav>
+
+        <a href="index.html">
+            <div id="logo"></div>
+        </a>
+        <div id="bag">
+            <h3>0</h3>
+        </div>
+    </header>
+
+
     <div id="splash">
     </div>
 
@@ -76,6 +74,7 @@
             <button class="materialsbtn">MATERIALE <i class="fa fa-angle-down"></i>
             </button>
             <div class="dropdown-materials">
+                <button class="materials">Alle</button>
                 <button class="materials">Guldbelagt</button>
                 <button class="materials">Sølv</button>
             </div>
@@ -85,6 +84,7 @@
             <button class="colorsbtn">FARVE <i class="fa fa-angle-down"></i>
             </button>
             <div class="dropdown-colors">
+                <button class="colors">Alle</button>
                 <button class="colors">Blå</button>
                 <button class="colors">Grøn</button>
                 <button class="colors">Lyserød</button>
@@ -95,14 +95,56 @@
             <button class="pricesbtn">SORTER <i class="fa fa-angle-down"></i>
             </button>
             <div class="dropdown-prices">
-                <button class="prices">Lav til høj</button>
-                <button class="prices">Høj til lav</button>
+                <button class="pricesup">Lav til høj</button>
+                <button class="pricesdown">Høj til lav</button>
             </div>
         </div>
 
     </div>
 
     <div id="products"></div>
+
+    <footer>
+        <div id="white"></div>
+        <div id="colorborder">
+        </div>
+
+        <div id="footer">
+            <div id="top">
+                <div id="address">
+                    <p>VÆRKSTED</p>
+                    <ul>
+                        <li>BIRGITTE BONNERUP</li>
+                        <li>Copenhagen ApS</li>
+                        <li>Borups Alle 217A</li>
+                        <li>2400 København</li>
+                    </ul>
+                </div>
+                <div id="somelinks">
+                    <a href="https://www.instagram.com/birgittebonnerup/?hl=en">
+                        <div id="insta"></div>
+                    </a>
+                    <a href="https://www.facebook.com/pages/category/Jewelry-Watches/Birgitte-Bonnerup-Copenhagen-126295617471506/">
+                        <div id="fb"></div>
+                    </a>
+                </div>
+                <div id="info">
+
+                    <ul>
+                        <li>Telefon 41 99 72 90</li>
+
+                        <li>BB@birgittebonnerup.dk</li>
+                    </ul>
+                    <div id="logo"></div>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            <a href="payment.html">BETINGELSER</a>
+            <a href="about.html">VISION</a>
+            <a href="payment.html">PERSONDATAPOLITIK</a>
+        </div>
+    </footer>
 
     <template>
         <div id="product">
@@ -112,118 +154,8 @@
     </template>
 
 
+    <script src="script.js"></script>
+    <script src="bracelets.js"></script>
 
 
-</body>
-
-<footer>
-    <div id="white"></div>
-    <div id="colorborder">
-    </div>
-
-    <div id="footer">
-        <div id="top">
-            <div id="address">
-                <p>VÆRKSTED</p>
-                <ul>
-                    <li>BIRGITTE BONNERUP</li>
-                    <li>Copenhagen ApS</li>
-                    <li>Borups Alle 217A</li>
-                    <li>2400 København</li>
-                </ul>
-            </div>
-            <div id="somelinks">
-                <a href="https://www.instagram.com/birgittebonnerup/?hl=en">
-                    <div id="insta"></div>
-                </a>
-                <a href="https://www.facebook.com/pages/category/Jewelry-Watches/Birgitte-Bonnerup-Copenhagen-126295617471506/">
-                    <div id="fb"></div>
-                </a>
-            </div>
-            <div id="info">
-
-                <ul>
-                    <li>Telefon 41 99 72 90</li>
-
-                    <li>BB@birgittebonnerup.dk</li>
-                </ul>
-                <div id="logo"></div>
-            </div>
-        </div>
-    </div>
-    <div id="bottom">
-        <a href="payment.html">BETINGELSER</a>
-        <a href="about.html">VISION</a>
-        <a href="payment.html">PERSONDATAPOLITIK</a>
-    </div>
-</footer>
-
-<script src="script.js"></script>
-<script src="filter.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", start);
-
-    function start() {
-        // Hent json fil fra Wordpress
-        async function getJson() {
-            let url = ("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/splashbillede/20");
-            let jsonData = await fetch(url);
-            billeder = await jsonData.json();
-            visBilleder();
-        }
-
-        function visBilleder() {
-
-            document.querySelector("#splash").style.backgroundImage = "url(" + billeder.billede.guid + ")";
-
-        }
-
-        getJson()
-    }
-
-
-    let bracelets = [];
-    let materials = "alle";
-    let colors = "alle";
-    document.addEventListener("DOMContentLoaded", shop);
-
-    function shop() {
-        async function getJson2() {
-            let url = "https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/armbaand";
-            let jsonData2 = await fetch(url);
-            bracelets = await jsonData2.json();
-            visBracelets();
-        }
-
-        function visBracelets() {
-
-            let dest = document.querySelector("#products");
-            let temp = document.querySelector("template");
-
-            bracelets.forEach(bracelet => {
-
-                if (materials == "alle" || materials == bracelet.materiale[0]) {
-                    let klon = temp.cloneNode(true).content;
-
-                    klon.querySelector("#product").style.backgroundImage = "url(" + bracelet.billede_1.guid + ")";
-
-                    klon.querySelector(".price").innerHTML = `${bracelet.pris} DKK`;
-                    dest.appendChild(klon);
-                }
-            })
-        }
-
-        document.querySelectorAll(".materials").forEach(elm => {
-            elm.addEventListener("click", visMaterialer);
-        })
-
-        function visMaterialer() {
-            materials = this.textContent;
-
-            visBracelets();
-        }
-
-        getJson2();
-    }
-</script></html>
+</body></html>

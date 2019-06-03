@@ -32,6 +32,3 @@ dropbtn.addEventListener("click", dropDown);
 function dropDown() {
     dropcontent.classList.toggle("show");
 }
-
-
-// FILTRERING

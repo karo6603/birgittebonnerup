@@ -455,6 +455,11 @@ input {
     text-align: right;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .dkk {
     border-left: none;
     margin-top: 0px;
@@ -484,10 +489,70 @@ h3 {
 }
 
 #giftcard {
-    background-image: url(materiale/billeder/Online_gavekort_2000x2000px_final_1024x1024.jpg);
-    width: 400px;
-    height: 400px;
+    background-image: url(materiale/billeder/m_5b4823396a0bb7c40d9626f5.jpg.jpg.jpeg);
+    width: 300px;
+    height: 300px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 0 auto;
+    margin: 30px auto;
+}
+
+/** SINGLEVIEW **/
+
+.slideshow {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.slide1,
+.slide2 {
+    display: block;
+    width: 100%;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
