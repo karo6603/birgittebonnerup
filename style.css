@@ -115,7 +115,7 @@ header {
     margin-top: 23px;
 }
 
-#logo {
+.logo {
     background-image: url(materiale/svg/logo_full.svg);
     width: 190px;
     height: 80px;
@@ -189,7 +189,7 @@ header {
     height: 30px;
 }
 
-#footer #logo {
+#footer .logo {
     background-image: url(materiale/svg/footer_logo.svg);
     background-repeat: no-repeat;
     width: 30px;
@@ -226,7 +226,7 @@ footer a:hover {
     background-repeat: no-repeat;
 }
 
-#index #logo {
+#index .logo {
     background-image: url(materiale/svg/logo_full_white.svg);
     width: 190px;
     height: 80px;
@@ -432,11 +432,6 @@ input {
     padding: 20px;
     border-right: none;
     text-align: right;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
 }
 
 .dkk {

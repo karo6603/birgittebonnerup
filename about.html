@@ -30,39 +30,40 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<header>
-    <nav>
-        <div id="menu">&#9776;</div>
-        <div class="overlay">
-            <a href="javascript:void(0)" class="closebtn">&times;</a>
-            <div class="overlaycontent">
-                <a href="index.html">FORSIDE</a>
-                <div class="dropdown">
-                    <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="bracelets.html">ARMBÅND</a>
-                        <a href="necklaces.html">HALSKÆDE</a>
-                        <a href="rings.html">RINGE</a>
-                        <a href="earrings.html">ØRERINGE</a>
-                    </div>
-                </div>
-                <a href="about.html">OM OS</a>
-                <a href="gift.html">GAVEKORT</a>
-                <a href="payment.html">BETINGELSER</a>
-            </div>
-        </div>
-    </nav>
-
-    <a href="index.html">
-        <div id="logo"></div>
-    </a>
-    <div id="bag">
-        <h3>0</h3>
-    </div>
-</header>
-
 <body>
+    <header>
+        <nav>
+            <div id="menu">&#9776;</div>
+            <div class="overlay">
+                <a href="javascript:void(0)" class="closebtn">&times;</a>
+                <div class="overlaycontent">
+                    <a href="index.html">FORSIDE</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="bracelets.html">ARMBÅND</a>
+                            <a href="necklaces.html">HALSKÆDE</a>
+                            <a href="rings.html">RINGE</a>
+                            <a href="earrings.html">ØRERINGE</a>
+                        </div>
+                    </div>
+                    <a href="about.html">OM OS</a>
+                    <a href="gift.html">GAVEKORT</a>
+                    <a href="payment.html">BETINGELSER</a>
+                </div>
+            </div>
+        </nav>
+
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+        <div id="bag">
+            <h3>0</h3>
+        </div>
+    </header>
+
+
     <h1>OM OS</h1>
     <div id="vision">
         <h2></h2>
@@ -77,76 +78,78 @@
     </div>
 
 
-</body>
 
-<footer>
-    <div id="white"></div>
-    <div id="colorborder">
-    </div>
 
-    <div id="footer">
-        <div id="top">
-            <div id="address">
-                <p>VÆRKSTED</p>
-                <ul>
-                    <li>BIRGITTE BONNERUP</li>
-                    <li>Copenhagen ApS</li>
-                    <li>Borups Alle 217A</li>
-                    <li>2400 København</li>
-                </ul>
-            </div>
-            <div id="somelinks">
-                <a href="https://www.instagram.com/birgittebonnerup/?hl=en">
-                    <div id="insta"></div>
-                </a>
-                <a href="https://www.facebook.com/pages/category/Jewelry-Watches/Birgitte-Bonnerup-Copenhagen-126295617471506/">
-                    <div id="fb"></div>
-                </a>
-            </div>
-            <div id="info">
+    <footer>
+        <div id="white"></div>
+        <div id="colorborder">
+        </div>
 
-                <ul>
-                    <li>Telefon 41 99 72 90</li>
+        <div id="footer">
+            <div id="top">
+                <div id="address">
+                    <p>VÆRKSTED</p>
+                    <ul>
+                        <li>BIRGITTE BONNERUP</li>
+                        <li>Copenhagen ApS</li>
+                        <li>Borups Alle 217A</li>
+                        <li>2400 København</li>
+                    </ul>
+                </div>
+                <div id="somelinks">
+                    <a href="https://www.instagram.com/birgittebonnerup/?hl=en">
+                        <div id="insta"></div>
+                    </a>
+                    <a href="https://www.facebook.com/pages/category/Jewelry-Watches/Birgitte-Bonnerup-Copenhagen-126295617471506/">
+                        <div id="fb"></div>
+                    </a>
+                </div>
+                <div id="info">
 
-                    <li>BB@birgittebonnerup.dk</li>
-                </ul>
-                <div id="logo"></div>
+                    <ul>
+                        <li>Telefon 41 99 72 90</li>
+
+                        <li>BB@birgittebonnerup.dk</li>
+                    </ul>
+                    <div class="logo"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="bottom">
-        <a href="payment.html">BETINGELSER</a>
-        <a href="about.html">VISION</a>
-        <a href="payment.html">PERSONDATAPOLITIK</a>
-    </div>
-</footer>
+        <div id="bottom">
+            <a href="payment.html">BETINGELSER</a>
+            <a href="about.html">VISION</a>
+            <a href="payment.html">PERSONDATAPOLITIK</a>
+        </div>
+    </footer>
 
 
-<script src="script.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", start);
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
 
-    function start() {
-        // Hent json fil fra Wordpress
-        async function getJson() {
-            let url = ("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/information/40");
-            let jsonData = await fetch(url);
-            informationer = await jsonData.json();
-            visInformation();
+        function start() {
+            // Hent json fil fra Wordpress
+            async function getJson() {
+                let url = ("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/information/40");
+                let jsonData = await fetch(url);
+                informationer = await jsonData.json();
+                visInformation();
+            }
+
+            function visInformation() {
+
+                document.querySelector("#vision h2").textContent = informationer.overskrift1;
+                document.querySelector("#vision p").textContent = informationer.tekst1;
+                document.querySelector("#picture1").style.backgroundImage = "url(" + informationer.billede1.guid + ")";
+
+                document.querySelector("#packaging h2").textContent = informationer.overskrift2;
+                document.querySelector("#packaging p").textContent = informationer.tekst2;
+                document.querySelector("#picture2").style.backgroundImage = "url(" + informationer.billede2.guid + ")";
+
+            }
+
+            getJson()
         }
+    </script>
 
-        function visInformation() {
-
-            document.querySelector("#vision h2").textContent = informationer.overskrift1;
-            document.querySelector("#vision p").textContent = informationer.tekst1;
-            document.querySelector("#picture1").style.backgroundImage = "url(" + informationer.billede1.guid + ")";
-
-            document.querySelector("#packaging h2").textContent = informationer.overskrift2;
-            document.querySelector("#packaging p").textContent = informationer.tekst2;
-            document.querySelector("#picture2").style.backgroundImage = "url(" + informationer.billede2.guid + ")";
-
-        }
-
-        getJson()
-    }
-</script></html>
+</body></html>

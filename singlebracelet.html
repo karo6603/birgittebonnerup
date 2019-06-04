@@ -30,39 +30,41 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<header>
-    <nav>
-        <div id="menu">&#9776;</div>
-        <div class="overlay">
-            <a href="javascript:void(0)" class="closebtn">&times;</a>
-            <div class="overlaycontent">
-                <a href="index.html">FORSIDE</a>
-                <div class="dropdown">
-                    <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="bracelets.html">ARMBÅND</a>
-                        <a href="necklaces.html">HALSKÆDE</a>
-                        <a href="rings.html">RINGE</a>
-                        <a href="earrings.html">ØRERINGE</a>
-                    </div>
-                </div>
-                <a href="about.html">OM OS</a>
-                <a href="gift.html">GAVEKORT</a>
-                <a href="payment.html">BETINGELSER</a>
-            </div>
-        </div>
-    </nav>
-
-    <a href="index.html">
-        <div id="logo"></div>
-    </a>
-    <div id="bag">
-        <h3>0</h3>
-    </div>
-</header>
-
 <body>
+
+    <header>
+        <nav>
+            <div id="menu">&#9776;</div>
+            <div class="overlay">
+                <a href="javascript:void(0)" class="closebtn">&times;</a>
+                <div class="overlaycontent">
+                    <a href="index.html">FORSIDE</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="bracelets.html">ARMBÅND</a>
+                            <a href="necklaces.html">HALSKÆDE</a>
+                            <a href="rings.html">RINGE</a>
+                            <a href="earrings.html">ØRERINGE</a>
+                        </div>
+                    </div>
+                    <a href="about.html">OM OS</a>
+                    <a href="gift.html">GAVEKORT</a>
+                    <a href="payment.html">BETINGELSER</a>
+                </div>
+            </div>
+        </nav>
+
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+        <div id="bag">
+            <h3>0</h3>
+        </div>
+    </header>
+
+
     <div id="singleview">
         <div id="jewelry">
 
@@ -86,141 +88,140 @@
             </div>
         </div>
     </div>
-</body>
 
-<footer>
-    <div id="white"></div>
-    <div id="colorborder">
-    </div>
 
-    <div id="footer">
-        <div id="top">
-            <div id="address">
-                <p>VÆRKSTED</p>
-                <ul>
-                    <li>BIRGITTE BONNERUP</li>
-                    <li>Copenhagen ApS</li>
-                    <li>Borups Alle 217A</li>
-                    <li>2400 København</li>
-                </ul>
-            </div>
-            <div id="somelinks">
-                <a href="https://www.instagram.com/birgittebonnerup/?hl=en">
-                    <div id="insta"></div>
-                </a>
-                <a href="https://www.facebook.com/pages/category/Jewelry-Watches/Birgitte-Bonnerup-Copenhagen-126295617471506/">
-                    <div id="fb"></div>
-                </a>
-            </div>
-            <div id="info">
+    <footer>
+        <div id="white"></div>
+        <div id="colorborder">
+        </div>
 
-                <ul>
-                    <li>Telefon 41 99 72 90</li>
+        <div id="footer">
+            <div id="top">
+                <div id="address">
+                    <p>VÆRKSTED</p>
+                    <ul>
+                        <li>BIRGITTE BONNERUP</li>
+                        <li>Copenhagen ApS</li>
+                        <li>Borups Alle 217A</li>
+                        <li>2400 København</li>
+                    </ul>
+                </div>
+                <div id="somelinks">
+                    <a href="https://www.instagram.com/birgittebonnerup/?hl=en">
+                        <div id="insta"></div>
+                    </a>
+                    <a href="https://www.facebook.com/pages/category/Jewelry-Watches/Birgitte-Bonnerup-Copenhagen-126295617471506/">
+                        <div id="fb"></div>
+                    </a>
+                </div>
+                <div id="info">
 
-                    <li>BB@birgittebonnerup.dk</li>
-                </ul>
-                <div id="logo"></div>
+                    <ul>
+                        <li>Telefon 41 99 72 90</li>
+
+                        <li>BB@birgittebonnerup.dk</li>
+                    </ul>
+                    <div class="logo"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="bottom">
-        <a href="payment.html">BETINGELSER</a>
-        <a href="about.html">VISION</a>
-        <a href="payment.html">PERSONDATAPOLITIK</a>
-    </div>
-</footer>
+        <div id="bottom">
+            <a href="payment.html">BETINGELSER</a>
+            <a href="about.html">VISION</a>
+            <a href="payment.html">PERSONDATAPOLITIK</a>
+        </div>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
-<script>
-    let urlParams = new URLSearchParams(window.location.search);
-    let id = urlParams.get("id");
-    let bracelet;
-    let bag = document.querySelector("#bag h3");
-    let buynumber = 0;
-    document.addEventListener("DOMContentLoaded", start);
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        let bracelet;
+        let bag = document.querySelector("#bag h3");
+        let buynumber = 0;
+        document.addEventListener("DOMContentLoaded", start);
 
-    function start() {
-        getJson();
+        function start() {
+            getJson();
 
-    }
-
-    async function getJson() {
-        let jsonData = await fetch("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/armbaand/" + id);
-        bracelet = await jsonData.json();
-
-        åbn();
-    }
-
-
-    function åbn() {
-        document.querySelector(".slide1").innerHTML = `<img src="${bracelet.billede_1.guid}">`;
-
-        document.querySelector(".slide2").innerHTML = `<img src="${bracelet.billede_2.guid}">`;
-
-
-    }
-
-
-    document.querySelector(".next").addEventListener("click", showNext);
-
-    document.querySelector(".prev").addEventListener("click", showPrev);
-
-
-    function showNext() {
-        if (document.querySelector(".slide1").classList.contains("none")) {
-            document.querySelector(".slide1").classList.remove("none");
-        } else {
-            document.querySelector(".slide1").classList.add("none");
         }
 
-        if (document.querySelector(".slide2").classList.contains("none")) {
-            document.querySelector(".slide2").classList.remove("none");
-        } else {
-            document.querySelector(".slide2").classList.add("none");
+        async function getJson() {
+            let jsonData = await fetch("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/armbaand/" + id);
+            bracelet = await jsonData.json();
+
+            åbn();
         }
 
-    }
 
-    function showPrev() {
-        if (document.querySelector(".slide1").classList.contains("none")) {
-            document.querySelector(".slide1").classList.remove("none");
-        } else {
-            document.querySelector(".slide1").classList.add("none");
+        function åbn() {
+            document.querySelector(".slide1").innerHTML = `<img src="${bracelet.billede_1.guid}">`;
+
+            document.querySelector(".slide2").innerHTML = `<img src="${bracelet.billede_2.guid}">`;
+
+
         }
 
-        if (document.querySelector(".slide2").classList.contains("none")) {
-            document.querySelector(".slide2").classList.remove("none");
-        } else {
-            document.querySelector(".slide2").classList.add("none");
+
+        document.querySelector(".next").addEventListener("click", showNext);
+
+        document.querySelector(".prev").addEventListener("click", showPrev);
+
+
+        function showNext() {
+            if (document.querySelector(".slide1").classList.contains("none")) {
+                document.querySelector(".slide1").classList.remove("none");
+            } else {
+                document.querySelector(".slide1").classList.add("none");
+            }
+
+            if (document.querySelector(".slide2").classList.contains("none")) {
+                document.querySelector(".slide2").classList.remove("none");
+            } else {
+                document.querySelector(".slide2").classList.add("none");
+            }
+
         }
-    }
 
-    function dropSize() {
-        document.querySelector("#sizes").style.display = "block";
-    }
+        function showPrev() {
+            if (document.querySelector(".slide1").classList.contains("none")) {
+                document.querySelector(".slide1").classList.remove("none");
+            } else {
+                document.querySelector(".slide1").classList.add("none");
+            }
 
-    document.querySelectorAll(".material").forEach(mtrl => {
-        mtrl.addEventListener("click", chooseMaterial);
-    })
+            if (document.querySelector(".slide2").classList.contains("none")) {
+                document.querySelector(".slide2").classList.remove("none");
+            } else {
+                document.querySelector(".slide2").classList.add("none");
+            }
+        }
 
-    function chooseMaterial() {
+        function dropSize() {
+            document.querySelector("#sizes").style.display = "block";
+        }
 
-        document.querySelector("#gold").classList.remove("chosen");
-        document.querySelector("#silver").classList.remove("chosen");
+        document.querySelectorAll(".material").forEach(mtrl => {
+            mtrl.addEventListener("click", chooseMaterial);
+        })
 
-        this.classList.add("chosen");
+        function chooseMaterial() {
 
-    }
+            document.querySelector("#gold").classList.remove("chosen");
+            document.querySelector("#silver").classList.remove("chosen");
 
-    document.querySelector("#buy").addEventListener("click", inBasket);
+            this.classList.add("chosen");
 
-    function inBasket() {
-        buynumber++;
+        }
 
-        bag.textContent = buynumber;
-    }
+        document.querySelector("#buy").addEventListener("click", inBasket);
 
-</script>
+        function inBasket() {
+            buynumber++;
 
-</html>
+            bag.textContent = buynumber;
+        }
+    </script>
+
+</body></html>
