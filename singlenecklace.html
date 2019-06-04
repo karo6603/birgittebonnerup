@@ -78,9 +78,17 @@
         </div>
 
         <div id="options">
+            <h2></h2>
             <div id="choosematerial">
                 <div id="gold" class="material"></div>
                 <div id="silver" class="material"></div>
+            </div>
+
+            <div id="choosesize">
+                <button id="sizebutton">Vælg størrelse<i class="fa fa-angle-down"></i></button>
+                <div id="sizes">
+                    <div class="size">ONE SIZE</div>
+                </div>
             </div>
 
             <div id="putinbasket">
@@ -91,15 +99,13 @@
 
 
     <footer>
-        <div id="white"></div>
-        <div id="colorborder">
-        </div>
 
         <div id="footer">
             <div id="top">
                 <div id="address">
-                    <p>VÆRKSTED</p>
+
                     <ul>
+                        <li>VÆRKSTED</li>
                         <li>BIRGITTE BONNERUP</li>
                         <li>Copenhagen ApS</li>
                         <li>Borups Alle 217A</li>
@@ -117,18 +123,19 @@
                 <div id="info">
 
                     <ul>
-                        <li>Telefon 41 99 72 90</li>
+                        <li>Telefon +45 41 99 72 90</li>
 
                         <li>BB@birgittebonnerup.dk</li>
                     </ul>
                     <div class="logo"></div>
                 </div>
             </div>
-        </div>
-        <div id="bottom">
-            <a href="payment.html">BETINGELSER</a>
-            <a href="about.html">VISION</a>
-            <a href="payment.html">PERSONDATAPOLITIK</a>
+
+            <div id="bottom">
+                <a href="payment.html">BETINGELSER</a>
+                <a href="about.html">VISION</a>
+                <a href="payment.html">PERSONDATAPOLITIK</a>
+            </div>
         </div>
     </footer>
 
@@ -138,6 +145,7 @@
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");
         let necklace;
+        let size;
         let bag = document.querySelector("#bag h3");
         let buynumber = 0;
         document.addEventListener("DOMContentLoaded", start);
@@ -160,7 +168,7 @@
 
             document.querySelector(".slide2").innerHTML = `<img src="${necklace.billede_2.guid}">`;
 
-
+            document.querySelector("#options h2").textContent = necklace.title.rendered;
         }
 
 
@@ -199,15 +207,27 @@
         }
 
 
+        document.querySelector("#sizebutton").addEventListener("click", dropSize);
+
         function dropSize() {
             document.querySelector("#sizes").style.display = "block";
         }
 
+        document.querySelectorAll(".size").forEach(sz => {
+            sz.addEventListener("click", chooseSize);
+        })
 
         document.querySelectorAll(".material").forEach(mtrl => {
             mtrl.addEventListener("click", chooseMaterial);
         })
 
+        function chooseSize() {
+            size = this.textContent;
+
+            document.querySelector("#sizebutton").textContent = size;
+
+            document.querySelector("#sizes").style.display = "none";
+        }
 
         function chooseMaterial() {
 

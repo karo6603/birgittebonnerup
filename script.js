@@ -11,7 +11,7 @@ let exit = document.querySelector(".closebtn");
 menu.addEventListener("click", showOverlay);
 
 function showOverlay() {
-    overlay.style.width = "80%";
+    overlay.style.width = "250px";
     overlaycontent.style.display = "block";
     exit.style.display = "block";
     menu.style.visibility = "hidden";

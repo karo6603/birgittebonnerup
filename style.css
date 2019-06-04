@@ -35,10 +35,8 @@ nav button {
     display: block;
     cursor: pointer;
     line-height: 2;
-}
-
-nav a:first-child {
-    padding-top: 100px;
+    width: 150px;
+    text-align: left;
 }
 
 .dropdown-content {
@@ -78,18 +76,13 @@ nav a:first-child {
     transition: 0.5s;
 }
 
-.overlay .closebtn {
-    position: absolute;
-    top: -130px;
-    right: 15px;
+.closebtn {
     font-size: 90px;
     display: none;
     background-color: transparent;
-    line-height: 1.3;
+    line-height: 0;
+    margin: 20px 0 20px 200px;
 }
-
-
-
 
 #menu {
     font-size: 40px;
@@ -125,22 +118,11 @@ header {
 
 /** FOOTER**/
 
-#white {
-    background-color: white;
-    width: 100%;
-    height: 5px;
-}
-
-#colorborder {
-    background-color: #E8E1D2;
-    width: 100%;
-    height: 100px;
-}
-
 #footer {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    background-color: #E8E1D2;
 }
 
 #top {
@@ -270,6 +252,8 @@ button {
     justify-content: space-around;
     margin-top: 20px;
     text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .dropdown-materials {
@@ -313,17 +297,17 @@ button {
 }
 
 .price {
-    margin: 400px 20px 0 0;
+    margin: 350px 20px 20px 0;
     text-align: right;
     font-family: 'Assistant';
     font-size: 20px;
 }
 
 #products {
-    margin: 0 auto;
+    margin: 30px auto;
+    max-width: 400px;
     column-count: 1;
-    column-gap: 10px;
-    margin: 25px;
+    column-gap: 20px;
     padding: 0;
 }
 
@@ -331,12 +315,14 @@ button {
     display: inline-block;
     background: #fff;
     padding: 1px;
-    margin: 0 0 30px;
+    margin: 0 auto 30px;
     width: 100%;
-    height: 90vw;
+    max-width: 400px;
+    height: auto;
     box-sizing: border-box;
     box-shadow: 2px 2px 4px 0 #ccc;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 
@@ -361,6 +347,7 @@ button {
 #faq {
     display: flex;
     flex-direction: column;
+    margin: 40px 0;
 }
 
 
@@ -469,6 +456,7 @@ h3 {
     background-size: contain;
     background-repeat: no-repeat;
     margin: 30px auto;
+    box-shadow: 2px 2px 4px 0 #ccc;
 }
 
 /** SINGLEVIEW **/
@@ -490,10 +478,6 @@ h3 {
 
 .none {
     display: none;
-}
-
-.show {
-    display: block;
 }
 
 .prev,
@@ -571,9 +555,150 @@ h3 {
 #putinbasket {
     margin: 20px auto;
     width: 200px;
+
 }
 
 #putinbasket button {
     width: 200px;
     margin: 0 0 40px;
+    cursor: pointer;
+}
+
+#options h2 {
+    text-align: center;
+}
+
+/** MEDIAQUERIES **/
+@media only screen and (min-width: 700px) {
+    #products {
+        column-count: 2;
+        max-width: 700px;
+    }
+
+    .price {
+        margin-top: 300px;
+    }
+
+    .slideshow {
+        max-width: 500px;
+    }
+
+    #choosematerial {
+        max-width: 200px;
+        margin: 0 auto
+    }
+
+    #top {
+        justify-content: space-around;
+    }
+
+    #somelinks {
+        padding: 40px;
+    }
+
+    #footer ul {
+        margin-top: 30px;
+    }
+
+    .faq {
+        width: 600px;
+    }
+
+    .content {
+        width: 570px;
+    }
+
+    .content p {
+        margin: 0;
+        max-width: 570px;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    #singleview {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #choosematerial {
+        margin: 50px auto 50px;
+    }
+
+    .slideshow {
+        margin: 10px 100px 0 200px;
+    }
+
+    #options {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    #options h2 {
+        margin-top: 100px;
+    }
+
+    #products {
+        column-count: 3;
+        max-width: 1000px;
+    }
+
+    #vision {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    #packaging {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    #picture1 {
+        margin-right: 0;
+    }
+
+    #picture2 {
+        margin-left: 0;
+    }
+
+    #about h1 {
+        max-width: 900px;
+    }
+
+    #about p {
+        line-height: 2;
+    }
+
+    #somelinks {
+        padding: 30px 100px;
+    }
+
+    #bottom {
+        width: 900px;
+        margin: 10px auto;
+    }
+
+    #buygift {
+        display: flex;
+        flex-direction: row;
+        max-width: 1100px;
+        margin: 40px auto 60px;
+    }
+
+    #left {
+        width: 900px;
+    }
+
+    #giftcard {
+        width: 500px;
+        height: 357px;
+        margin: 150px 50px;
+    }
+
 }
