@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birgitte Bonnerup</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Assistant|Dosis:300|Poiret+One|Roboto:300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="60x60" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="76x76" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="120x120" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="144x144" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="152x152" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="icon" type="image/png" sizes="192x192" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="icon" type="image/png" sizes="96x96" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="materiale/svg/logo_bb-100.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<header>
+    <nav>
+        <div id="menu">&#9776;</div>
+        <div class="overlay">
+            <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <div class="overlaycontent">
+                <a href="index.html">FORSIDE</a>
+                <div class="dropdown">
+                    <button class="dropbtn">SMYKKER <i class="fa fa-angle-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="bracelets.html">ARMBÅND</a>
+                        <a href="necklaces.html">HALSKÆDE</a>
+                        <a href="rings.html">RINGE</a>
+                        <a href="earrings.html">ØRERINGE</a>
+                    </div>
+                </div>
+                <a href="about.html">OM OS</a>
+                <a href="gift.html">GAVEKORT</a>
+                <a href="payment.html">BETINGELSER</a>
+            </div>
+        </div>
+    </nav>
+
+    <a href="index.html">
+        <div id="logo"></div>
+    </a>
+    <div id="bag">
+        <h3>0</h3>
+    </div>
+</header>
+
+<body>
+    <div id="singleview">
+        <div id="jewelry">
+
+            <div class="slideshow">
+                <div class="slide1"></div>
+                <div class="slide2 none"></div>
+                <div class="prev">&#10094;</div>
+                <div class="next">&#10095;</div>
+            </div>
+
+        </div>
+
+        <div id="options">
+            <div id="choosematerial">
+                <div id="gold" class="material"></div>
+                <div id="silver" class="material"></div>
+            </div>
+
+            <div id="putinbasket">
+                <button id="buy">LÆG I KURV</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <div id="white"></div>
+    <div id="colorborder">
+    </div>
+
+    <div id="footer">
+        <div id="top">
+            <div id="address">
+                <p>VÆRKSTED</p>
+                <ul>
+                    <li>BIRGITTE BONNERUP</li>
+                    <li>Copenhagen ApS</li>
+                    <li>Borups Alle 217A</li>
+                    <li>2400 København</li>
+                </ul>
+            </div>
+            <div id="somelinks">
+                <a href="https://www.instagram.com/birgittebonnerup/?hl=en">
+                    <div id="insta"></div>
+                </a>
+                <a href="https://www.facebook.com/pages/category/Jewelry-Watches/Birgitte-Bonnerup-Copenhagen-126295617471506/">
+                    <div id="fb"></div>
+                </a>
+            </div>
+            <div id="info">
+
+                <ul>
+                    <li>Telefon 41 99 72 90</li>
+
+                    <li>BB@birgittebonnerup.dk</li>
+                </ul>
+                <div id="logo"></div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <a href="payment.html">BETINGELSER</a>
+        <a href="about.html">VISION</a>
+        <a href="payment.html">PERSONDATAPOLITIK</a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+    let urlParams = new URLSearchParams(window.location.search);
+    let id = urlParams.get("id");
+    let earring;
+    let bag = document.querySelector("#bag h3");
+    let buynumber = 0;
+    document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+        getJson();
+
+    }
+
+    async function getJson() {
+        let jsonData = await fetch("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/oerering/" + id);
+        earring = await jsonData.json();
+
+        åbn();
+    }
+
+
+    function åbn() {
+        document.querySelector(".slide1").innerHTML = `<img src="${earring.billede_1.guid}">`;
+
+        document.querySelector(".slide2").innerHTML = `<img src="${earring.billede_2.guid}">`;
+
+
+    }
+
+
+    document.querySelector(".next").addEventListener("click", showNext);
+
+    document.querySelector(".prev").addEventListener("click", showPrev);
+
+
+    function showNext() {
+        if (document.querySelector(".slide1").classList.contains("none")) {
+            document.querySelector(".slide1").classList.remove("none");
+        } else {
+            document.querySelector(".slide1").classList.add("none");
+        }
+
+        if (document.querySelector(".slide2").classList.contains("none")) {
+            document.querySelector(".slide2").classList.remove("none");
+        } else {
+            document.querySelector(".slide2").classList.add("none");
+        }
+
+    }
+
+    function showPrev() {
+        if (document.querySelector(".slide1").classList.contains("none")) {
+            document.querySelector(".slide1").classList.remove("none");
+        } else {
+            document.querySelector(".slide1").classList.add("none");
+        }
+
+        if (document.querySelector(".slide2").classList.contains("none")) {
+            document.querySelector(".slide2").classList.remove("none");
+        } else {
+            document.querySelector(".slide2").classList.add("none");
+        }
+    }
+
+    function dropSize() {
+        document.querySelector("#sizes").style.display = "block";
+    }
+
+    document.querySelectorAll(".material").forEach(mtrl => {
+        mtrl.addEventListener("click", chooseMaterial);
+    })
+
+    function chooseMaterial() {
+
+        document.querySelector("#gold").classList.remove("chosen");
+        document.querySelector("#silver").classList.remove("chosen");
+
+        this.classList.add("chosen");
+
+    }
+
+    document.querySelector("#buy").addEventListener("click", inBasket);
+
+    function inBasket() {
+        buynumber++;
+
+        bag.textContent = buynumber;
+    }
+</script></html>

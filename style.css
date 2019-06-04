@@ -339,27 +339,6 @@ button {
     background-size: contain;
 }
 
-/*
-#products {
-    margin: 0 auto;
-    column-count: 3;
-    column-gap: 1em;
-    margin: 1.5em;
-    padding: 2em 0;
-}
-
-#product{
-    display: inline-block;
-    background: #fff;
-    padding: 1em;
-    margin: 0 0 1.5em;
-    width: 100%;
-    height: 25vw;
-    box-sizing: border-box;
-    box-shadow: 2px 2px 4px 0 #ccc;
-}
-*/
-
 
 /** ABOUT **/
 
@@ -500,15 +479,26 @@ h3 {
 /** SINGLEVIEW **/
 
 .slideshow {
-    max-width: 1000px;
     position: relative;
     margin: auto;
 }
 
 .slide1,
 .slide2 {
-    display: block;
     width: 100%;
+}
+
+.slide1 img,
+.slide2 img {
+    width: 100%;
+}
+
+.none {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 .prev,
@@ -519,40 +509,76 @@ h3 {
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
 }
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
 }
 
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+#gold {
+    border-radius: 50px;
+    background: linear-gradient(to right, #BF953F, #eae5b7, #BF953F);
+    width: 50px;
+    height: 50px;
 }
 
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
+#silver {
+    border-radius: 50px;
+    background: linear-gradient(to right, #a8a8a8, #ededed, #a8a8a8);
+    width: 50px;
+    height: 50px;
 }
 
-@keyframes fade {
-    from {
-        opacity: .4
-    }
+#choosematerial {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 150px;
+}
 
-    to {
-        opacity: 1
-    }
+.chosen {
+    border: solid #E8E1D2 5px;
+}
+
+#choosesize {
+    margin: 40px auto 20px;
+    width: 200px;
+}
+
+#sizebutton {
+    border: solid;
+    padding: 5px;
+    width: 200px;
+    cursor: pointer;
+}
+
+
+#sizes {
+    display: none;
+    font-family: 'Roboto';
+    border: solid grey;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+
+.size {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#sizebutton i {
+    margin-left: 5px;
+}
+
+#putinbasket {
+    margin: 20px auto;
+    width: 200px;
+}
+
+#putinbasket button {
+    width: 200px;
+    margin: 0 0 40px;
 }

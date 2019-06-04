@@ -67,21 +67,23 @@
         <div id="jewelry">
 
             <div class="slideshow">
-                <div class="slide1 fade"></div>
-                <div class="slide2 fade"></div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="slide1"></div>
+                <div class="slide2 none"></div>
+                <div class="prev">&#10094;</div>
+                <div class="next">&#10095;</div>
             </div>
 
         </div>
 
         <div id="options">
             <div id="choosematerial">
-                <div id="gold"></div>
-                <div id="silver"></div>
+                <div id="gold" class="material"></div>
+                <div id="silver" class="material"></div>
             </div>
-            <div id="size"></div>
-            <div id="putinbasket"></div>
+
+            <div id="putinbasket">
+                <button id="buy">LÆG I KURV</button>
+            </div>
         </div>
     </div>
 </body>
@@ -134,11 +136,12 @@
     let urlParams = new URLSearchParams(window.location.search);
     let id = urlParams.get("id");
     let bracelet;
+    let bag = document.querySelector("#bag h3");
+    let buynumber = 0;
     document.addEventListener("DOMContentLoaded", start);
 
     function start() {
         getJson();
-
 
     }
 
@@ -146,23 +149,78 @@
         let jsonData = await fetch("https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/armbaand/" + id);
         bracelet = await jsonData.json();
 
-        console.log(bracelet);
-
-
         åbn();
     }
 
 
-
     function åbn() {
-        console.log(document.querySelector(".slide1"), bracelet.billede_1.guid);
-
         document.querySelector(".slide1").innerHTML = `<img src="${bracelet.billede_1.guid}">`;
-
-        console.log(document.querySelector(".slide1"), bracelet.billede_1.guid);
 
         document.querySelector(".slide2").innerHTML = `<img src="${bracelet.billede_2.guid}">`;
 
 
     }
-</script></html>
+
+
+    document.querySelector(".next").addEventListener("click", showNext);
+
+    document.querySelector(".prev").addEventListener("click", showPrev);
+
+
+    function showNext() {
+        if (document.querySelector(".slide1").classList.contains("none")) {
+            document.querySelector(".slide1").classList.remove("none");
+        } else {
+            document.querySelector(".slide1").classList.add("none");
+        }
+
+        if (document.querySelector(".slide2").classList.contains("none")) {
+            document.querySelector(".slide2").classList.remove("none");
+        } else {
+            document.querySelector(".slide2").classList.add("none");
+        }
+
+    }
+
+    function showPrev() {
+        if (document.querySelector(".slide1").classList.contains("none")) {
+            document.querySelector(".slide1").classList.remove("none");
+        } else {
+            document.querySelector(".slide1").classList.add("none");
+        }
+
+        if (document.querySelector(".slide2").classList.contains("none")) {
+            document.querySelector(".slide2").classList.remove("none");
+        } else {
+            document.querySelector(".slide2").classList.add("none");
+        }
+    }
+
+    function dropSize() {
+        document.querySelector("#sizes").style.display = "block";
+    }
+
+    document.querySelectorAll(".material").forEach(mtrl => {
+        mtrl.addEventListener("click", chooseMaterial);
+    })
+
+    function chooseMaterial() {
+
+        document.querySelector("#gold").classList.remove("chosen");
+        document.querySelector("#silver").classList.remove("chosen");
+
+        this.classList.add("chosen");
+
+    }
+
+    document.querySelector("#buy").addEventListener("click", inBasket);
+
+    function inBasket() {
+        buynumber++;
+
+        bag.textContent = buynumber;
+    }
+
+</script>
+
+</html>
