@@ -54,7 +54,7 @@
 
  function shop() {
      async function getJson2() {
-         let url = "https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/armbaand";
+         let url = "https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/armbaand?per_page=100";
          let jsonData2 = await fetch(url);
          bracelets = await jsonData2.json();
          visBracelets();

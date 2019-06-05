@@ -1,0 +1,25 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        stroke: #41555b;
+        stroke-miterlimit: 10;
+        stroke-width: 40px;
+      }
+
+      .cls-3 {
+        fill: #41555b;
+      }
+    </style>
+  </defs>
+  <title>kurv</title>
+  <path class="cls-1" d="M366,395c0-71.797,65.8141-130,147-130s147,58.203,147,130"/>
+  <g>
+    <rect class="cls-2" x="193" y="410" width="654" height="411.4912"/>
+    <path class="cls-3" d="M827,430V801.4911H213V430H827m40-40H173V841.4911H867V390Z"/>
+  </g>
+</svg>

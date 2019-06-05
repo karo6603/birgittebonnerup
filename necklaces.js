@@ -62,7 +62,7 @@
 
    function shop() {
        async function getJson2() {
-           let url = "https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/halskaede";
+           let url = "https://karolinekrogsboell.dk/kea/birgittebonnerup/wordpress/wp-json/wp/v2/halskaede?per_page=100";
            let jsonData2 = await fetch(url);
            necklaces = await jsonData2.json();
            visNecklaces();

@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.4525 16.0867">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 0.5px;
+      }
+    </style>
+  </defs>
+  <title>nyburgerfar</title>
+  <line class="cls-1" x1="2.0258" y1="3.8464" x2="24.8579" y2="3.8464"/>
+  <line class="cls-1" x1="1.8579" y1="8.0817" x2="24.8579" y2="8.0817"/>
+  <line class="cls-1" x1="1.8579" y1="12.8464" x2="24.8579" y2="12.8464"/>
+</svg>
