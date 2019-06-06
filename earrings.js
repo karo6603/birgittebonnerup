@@ -1,4 +1,7 @@
-   let materialsbtn = document.querySelector(".materialsbtn");
+// FILTRERINGSKNAPPER DROPDOWN
+
+
+let materialsbtn = document.querySelector(".materialsbtn");
    let colorsbtn = document.querySelector(".colorsbtn");
    let pricesbtn = document.querySelector(".pricesbtn");
    let stonesbtn = document.querySelector(".stonesbtn");
@@ -33,6 +36,9 @@
 
    }
 
+
+//HENT SPLASHBILLEDE VIA WP REST API
+
    document.addEventListener("DOMContentLoaded", start);
 
    function start() {
@@ -53,6 +59,9 @@
        getJson()
    }
 
+
+
+//HENT PRODUKTER VIA WP REST API + FILTRERING + SORTERING
 
    let earrings = [];
    let materials = "Alle";

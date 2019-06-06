@@ -147,6 +147,12 @@
         let size;
         let bag = document.querySelector("#bag h3");
         let buynumber = 0;
+
+
+
+        // HENT INFORMATIONER FRA PRODUKTET DER ER KLIKKET PÅ PÅ FORRIGE SIDE + HENT INFO VIA WP REST API
+
+
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
@@ -169,6 +175,9 @@
             document.querySelector("#options h2").textContent = earring.title.rendered;
 
         }
+
+
+        // SLIDESHOW
 
 
         document.querySelector(".next").addEventListener("click", showNext);
@@ -205,6 +214,8 @@
             }
         }
 
+
+        // VALG AF FARVE OG STØRRELSE
         document.querySelector("#sizebutton").addEventListener("click", dropSize);
 
         function dropSize() {
@@ -235,6 +246,9 @@
             this.classList.add("chosen");
 
         }
+
+
+        // PUT I KURV
 
         document.querySelector("#buy").addEventListener("click", inBasket);
 

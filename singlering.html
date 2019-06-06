@@ -102,6 +102,21 @@
         </div>
     </div>
 
+    <div id="infographic">
+        <div id="guidetext">
+            <h1>FIND DIN RINGSTØRRELSE</h1>
+            <h2>Guide til at finde din ringstørrelse</h2>
+            <p>Der findes flere forskellige metoder du kan måle din ringstørrelse på. Vi anbefaler følgende måder.<br><br>
+
+                Mål den indvendige omkreds af din ring med et målebånd. Hvis omkredsen er 56 mm svarer det til en ring størrelse 56. Brug en lineal eller skydelære og mål den indvendige diameter i mm på din ring. <br>Derefter kan du let aflæse din ringstørrelse i skemaet nedenunder.</p>
+        </div>
+
+        <div id="graphic">
+            <div id="hand"></div>
+            <div id="sizechart"></div>
+        </div>
+    </div>
+
 
     <footer>
 
@@ -153,6 +168,10 @@
         let size;
         let bag = document.querySelector("#bag h3");
         let buynumber = 0;
+
+
+        // HENT INFORMATIONER FRA PRODUKTET DER ER KLIKKET PÅ PÅ FORRIGE SIDE + HENT INFO VIA WP REST API
+
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
@@ -176,6 +195,8 @@
             document.querySelector("#options h2").textContent = ring.title.rendered;
         }
 
+
+        // SLIDESHOW
 
         document.querySelector(".next").addEventListener("click", showNext);
 
@@ -211,6 +232,8 @@
             }
         }
 
+
+        // VALG AF FARVE OG STØRRELSE
         document.querySelector("#sizebutton").addEventListener("click", dropSize);
 
         function dropSize() {
@@ -241,6 +264,9 @@
             this.classList.add("chosen");
 
         }
+
+
+        // PUT I KURV
 
         document.querySelector("#buy").addEventListener("click", inBasket);
 

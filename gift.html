@@ -32,7 +32,8 @@
 <body>
     <header>
         <nav>
-            <div id="menu">&#9776;<p>Menu</p></div>
+            <div id="menu">&#9776;<p>Menu</p>
+            </div>
             <div class="overlay">
                 <a href="javascript:void(0)" class="closebtn">&times;</a>
                 <div class="overlaycontent">
@@ -64,26 +65,35 @@
 
 
     <div id="buygift">
-        <div id="left">
+        <div id="first">
             <h1>GAVEKORT</h1>
             <p>Du kan altid glæde en du holder af med et gavekort til BIRGITTE BONNERUP. Beløbet indtastes i formularen og minimumsbeløbet er på 100 danske kroner. <br>Gavekortet bliver sendt i en af vores økologiske bomuldsposer med en personlig kode. <br><br>Gavekortet kan bruges til www.birgittebonnerup.dk og er gældende i et år fra udstedelsesdatoen. Gavekortet kan ikke ombyttes til kontanter. </p>
 
-            <h2>GAVEKORTETS BELØB</h2>
-
-            <div class="amount">
-                <input type="text" placeholder="Beløb">
-                <div class="dkk">DKK</div>
-            </div>
-
-            <div id="buy">
-                <h3>LÆG I KURV</h3>
-            </div>
-
         </div>
 
-        <div id="giftcard"></div>
+        <div id="second">
+
+            <div class="amount">
+
+                <h2>GAVEKORTETS BELØB</h2>
 
 
+                <div class="slidecontainer">
+                    <input type="range" min="100" max="2000" value="100" step="50" class="chooseamount" id="slider">
+                </div>
+                <div id="dkk"></div>
+
+
+                <div id="buy">
+                    <h3>LÆG I KURV</h3>
+                </div>
+
+            </div>
+
+
+            <div id="giftcard"></div>
+
+        </div>
     </div>
 
     <footer>
@@ -128,5 +138,19 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+
+        // SLIDER
+
+        let slider = document.querySelector("#slider");
+        let output = document.querySelector("#dkk");
+
+        output.innerHTML = slider.value + " DKK";
+
+        slider.oninput = function() {
+            output.innerHTML = this.value + " DKK";
+        }
+    </script>
 
 </body></html>
