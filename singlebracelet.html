@@ -254,21 +254,17 @@
         document.querySelector("#buy").addEventListener("click", inBasket);
 
         function inBasket() {
-            window.localStorage.buynumber++;
+            window.sessionStorage.buynumber++;
 
-            bag.textContent = window.localStorage.buynumber;
+            bag.textContent = window.sessionStorage.buynumber;
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            console.log(typeof(window.localStorage.buynumber))
-
-            if (typeof(window.localStorage.buynumber) != "number") {
-
-                window.localStorage.buynumber = 0;
-                console.log(window.localStorage.buynumber)
+            if (!window.sessionStorage.buynumber) {
+                window.sessionStorage.buynumber = 0;
             }
 
-            bag.textContent = window.localStorage.buynumber;
+            bag.textContent = window.sessionStorage.buynumber;
         })
     </script>
 

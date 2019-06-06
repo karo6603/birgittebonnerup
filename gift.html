@@ -140,7 +140,6 @@
     <script src="script.js"></script>
 
     <script>
-
         // SLIDER
 
         let slider = document.querySelector("#slider");
@@ -151,6 +150,29 @@
         slider.oninput = function() {
             output.innerHTML = this.value + " DKK";
         }
+
+
+        // KURV
+
+        let bag = document.querySelector("#bag h3");
+
+
+        document.querySelector("#buy").addEventListener("click", inBasket);
+
+        function inBasket() {
+            window.sessionStorage.buynumber++;
+
+            bag.textContent = window.sessionStorage.buynumber;
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!window.sessionStorage.buynumber) {
+                window.sessionStorage.buynumber = 0;
+            }
+
+            bag.textContent = window.sessionStorage.buynumber;
+        })
     </script>
 
 </body></html>

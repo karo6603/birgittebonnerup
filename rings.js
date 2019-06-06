@@ -173,3 +173,15 @@ function shop() {
 
     getJson2();
 }
+
+// KURV
+
+let bag = document.querySelector("#bag h3");
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (!window.sessionStorage.buynumber) {
+        window.sessionStorage.buynumber = 0;
+    }
+
+    bag.textContent = window.sessionStorage.buynumber;
+})

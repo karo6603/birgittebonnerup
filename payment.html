@@ -32,7 +32,8 @@
 <body>
     <header>
         <nav>
-            <div id="menu">&#9776;<p>Menu</p></div>
+            <div id="menu">&#9776;<p>Menu</p>
+            </div>
             <div class="overlay">
                 <a href="javascript:void(0)" class="closebtn">&times;</a>
                 <div class="overlaycontent">
@@ -187,5 +188,18 @@
                 }
             });
         }
+
+
+        // KURV
+
+        let bag = document.querySelector("#bag h3");
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!window.sessionStorage.buynumber) {
+                window.sessionStorage.buynumber = 0;
+            }
+
+            bag.textContent = window.sessionStorage.buynumber;
+        })
     </script>
 </body></html>

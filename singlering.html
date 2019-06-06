@@ -271,10 +271,18 @@
         document.querySelector("#buy").addEventListener("click", inBasket);
 
         function inBasket() {
-            buynumber++;
+            window.sessionStorage.buynumber++;
 
-            bag.textContent = buynumber;
+            bag.textContent = window.sessionStorage.buynumber;
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!window.sessionStorage.buynumber) {
+                window.sessionStorage.buynumber = 0;
+            }
+
+            bag.textContent = window.sessionStorage.buynumber;
+        })
     </script>
 
 </body></html>

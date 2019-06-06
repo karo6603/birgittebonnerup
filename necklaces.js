@@ -1,6 +1,6 @@
    //FILTRERINGSKNAPPER DROPDOWN
 
-let materialsbtn = document.querySelector(".materialsbtn");
+   let materialsbtn = document.querySelector(".materialsbtn");
    let colorsbtn = document.querySelector(".colorsbtn");
    let pricesbtn = document.querySelector(".pricesbtn");
    let stonesbtn = document.querySelector(".stonesbtn");
@@ -36,7 +36,7 @@ let materialsbtn = document.querySelector(".materialsbtn");
    }
 
 
-// HENT SPLASHBILLEDE VIA WP REST API
+   // HENT SPLASHBILLEDE VIA WP REST API
 
    document.addEventListener("DOMContentLoaded", start);
 
@@ -59,7 +59,7 @@ let materialsbtn = document.querySelector(".materialsbtn");
    }
 
 
-// HENT PRODUKTER VIA WP REST API + FILTRERING + SORTERING
+   // HENT PRODUKTER VIA WP REST API + FILTRERING + SORTERING
 
 
    let necklaces = [];
@@ -154,3 +154,15 @@ let materialsbtn = document.querySelector(".materialsbtn");
 
        getJson2();
    }
+
+   // KURV
+
+   let bag = document.querySelector("#bag h3");
+
+   document.addEventListener("DOMContentLoaded", () => {
+       if (!window.sessionStorage.buynumber) {
+           window.sessionStorage.buynumber = 0;
+       }
+
+       bag.textContent = window.sessionStorage.buynumber;
+   })
