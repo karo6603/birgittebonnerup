@@ -73,8 +73,10 @@
 
         <div class="materialsdrop">
             <button class="materialsbtn">MATERIALE <i class="fa fa-angle-down"></i>
-            </button>
+            </button> <!-- Knap til filtrering med pilikon på -->
+
             <div class="dropdown-materials">
+                <!-- Dropdown der vises når man trykker på button -->
                 <button class="materials">Alle</button>
                 <button class="materials">Guldbelagt</button>
                 <button class="materials">Sølv</button>
@@ -84,8 +86,10 @@
 
         <div class="colorsdrop">
             <button class="colorsbtn">FARVE <i class="fa fa-angle-down"></i>
-            </button>
+            </button> <!-- Knap til filtrering med pilikon på -->
+
             <div class="dropdown-colors">
+                <!-- Dropdown der vises når man trykker på button -->
                 <button class="colors">Alle</button>
                 <button class="colors">Blå</button>
                 <button class="colors">Grøn</button>
@@ -99,8 +103,10 @@
 
         <div class="stonesdrop">
             <button class="stonesbtn">STEN <i class="fa fa-angle-down"></i>
-            </button>
+            </button> <!-- Knap til filtrering med pilikon på -->
+
             <div class="dropdown-stones">
+                <!-- Dropdown der vises når man trykker på button -->
                 <button class="stones">Alle</button>
                 <button class="stones">Aventurin</button>
                 <button class="stones">Chalcedon</button>
@@ -113,8 +119,10 @@
 
         <div class="pricesdrop">
             <button class="pricesbtn">SORTER <i class="fa fa-angle-down"></i>
-            </button>
+            </button> <!-- Knap til sortering med pilikon på -->
+
             <div class="dropdown-prices">
+                <!-- Dropdown der vises når man trykker på button -->
                 <button class="pricesup">Pris: Lav til høj</button>
                 <button class="pricesdown">Pris: Høj til lav</button>
 
@@ -123,7 +131,7 @@
 
     </div>
 
-    <div id="products"></div>
+    <div id="products"></div> <!-- Destinationen for json filer fra wp rest api -->
 
 
     <footer>
@@ -169,6 +177,7 @@
 
 
     <template>
+        <!-- Template for hvordan hver enkelt json fil skal struktureres -->
         <div id="product">
             <div class="productpicture"></div>
             <div class="price"></div>
@@ -177,6 +186,4 @@
 
     <script src="script.js"></script>
     <script src="rings.js"></script>
-</body>
-
-</html>
+</body></html>
